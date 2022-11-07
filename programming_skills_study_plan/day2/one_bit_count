@@ -1,0 +1,22 @@
+191. Number of 1 Bits
+
+
+
+
+class Solution(object):
+    def hammingWeight(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        c = 0
+        while(n > 0):
+            n &= (n - 1)
+            c += 1
+        return c
+        
+
+
+logic is 
+1. using & removes leftmost digit ie 5 & 4 = 3
+2. using or operator adds leftmost ie. 5 or 4 = 6
