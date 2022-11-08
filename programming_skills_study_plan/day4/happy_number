@@ -1,0 +1,43 @@
+Happy Number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+logic - find the looping condition
+
+class Solution(object):
+    def squared_sum(self, n):
+        squared_sum = 0
+        while(n > 0):
+            last_num = n % 10
+            squared_sum += (last_num * last_num)
+            n = n // 10
+        return squared_sum
+
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        seen = set()
+        while n not in seen:
+            seen.add(n)
+            n = self.squared_sum(n)
+        
+        return n == 1
